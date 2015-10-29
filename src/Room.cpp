@@ -1,7 +1,6 @@
 #include "Room.h"
 
-namespace Fury {
-
-
+namespace Fury
 {
-} /* End of namespace Fury */
+
+}
