@@ -4,18 +4,21 @@
 #include "EventDispatcher.h"
 #include "State.h"
 
-
-namespace Fury {
-
-class InGameState : public State
+namespace Fury
 {
+    class Game;
 
-
- private:
-    EventDispatcher eventDispatcher;
-
-};
-
+    class InGameState final : public State
+    {
+        public:
+            InGameState(Game* game);
+            bool Init();
+            void ManageInput(const sf::Window& window);
+            void Update();
+            void draw(sf::RenderTarget& target, sf::RenderStates states)const;
+        private:
+            EventDispatcher eventDispatcher;
+    };
 } /* End of namespace Fury */
 
 #endif // FURY_INGAMESTATE_H

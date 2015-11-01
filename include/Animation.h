@@ -12,7 +12,7 @@ class Animation
 
 
  private:
-    std::vector< null > frames;
+    //std::vector< null > frames;
 
 };
 

@@ -5,8 +5,6 @@ namespace Fury
 {
     class NonCopyable
     {
-        public:
-            ~NonCopyable();
         protected:
             NonCopyable() = default;
         private:

@@ -12,7 +12,7 @@ class AnimatedSprite
 
  private:
     Animation animations;
-    null sprite;
+    //null sprite;
 
 };
 

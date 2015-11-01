@@ -3,7 +3,7 @@
 
 #include <vector>
 
-#include "EventListener.h"
+#include "EventListener.hpp"
 
 
 namespace Fury {
@@ -13,7 +13,7 @@ class EventDispatcher
 
 
  private:
-    std::vector< EventListener* > listeners;
+    std::vector< EventListener<>* > listeners;
 
 };
 

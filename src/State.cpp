@@ -1,6 +1,9 @@
 #include "State.h"
 
-State::State(Game* game) : game(game)
+namespace Fury
 {
+    State::State(Game* game) : game(game)
+    {
 
+    }
 }

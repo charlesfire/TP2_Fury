@@ -6,7 +6,7 @@
 namespace Fury
 {
     template<class T>
-    class Singleton : NonCopyable
+    class Singleton : private NonCopyable
     {
         public:
             T& GetInstance()const

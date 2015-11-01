@@ -8,12 +8,10 @@
 
 namespace Fury {
 
-class Player : public Actor, public Singleton
+class Player : public Actor, public Singleton<Player>
 {
-
-
- private:
-    AnimatedSprite sprite;
+    private:
+        AnimatedSprite sprite;
 
 };
 
