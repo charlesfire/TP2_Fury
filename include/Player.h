@@ -4,16 +4,21 @@
 #include "Actor.h"
 #include "AnimatedSprite.h"
 #include "Singleton.h"
+#include "Direction.h"
 
-
-namespace Fury {
-
-class Player : public Actor, public Singleton<Player>
+namespace Fury 
 {
-    private:
-        AnimatedSprite sprite;
-
-};
+	class Player final : public Actor, public Singleton<Player>
+	{
+		public:
+			Player();
+			~Player();
+			void Shoot()const;
+		private:
+			int shotDelay;
+		    AnimatedSprite sprite;
+			Direction orientation;
+	};
 
 } /* End of namespace Fury */
 
