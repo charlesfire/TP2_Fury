@@ -12,15 +12,15 @@ namespace sf
 
 namespace Fury
 {
-    class TextureManager final : Singleton<TextureManager>
+    class TextureManager final : public Singleton<TextureManager>
     {
         public:
+            TextureManager() = default;
+            virtual ~TextureManager();
             sf::Texture& GetTexture(const std::string& link);
             bool DeleteTexture(const std::string& link);
             void DeleteAll();
         private:
-            TextureManager() = default;
-            virtual ~TextureManager();
             std::map<std::string, sf::Texture*> m_textureList;
             inline bool SearchTexture(const std::string& link);
     };

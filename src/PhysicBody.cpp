@@ -3,7 +3,7 @@
 
 namespace Fury
 {
-    PhysicBody::PhysicBody(const Shape* const shape, const sf::Vector2f& position) : shape(shape), position(position), isSleeping(true)
+    PhysicBody::PhysicBody(const Shape* const shape, const sf::Vector2f& position) : position(position), shape(shape), isSleeping(true), isStatic(false)
     {
 
     }
@@ -19,9 +19,19 @@ namespace Fury
         return isSleeping;
     }
 
+    bool PhysicBody::IsStatic() const
+    {
+        return isStatic;
+    }
+
     void PhysicBody::Move(const sf::Vector2f& offset)
     {
         position += offset;
+    }
+
+    void PhysicBody::SetIsStatic(const bool isStatic)
+    {
+        this->isStatic = isStatic;
     }
 
     void PhysicBody::SetPosition(const sf::Vector2f& position)

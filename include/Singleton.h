@@ -9,7 +9,7 @@ namespace Fury
     class Singleton : private NonCopyable
     {
         public:
-            T& GetInstance()const
+            static T& GetInstance()
             {
                 static T instance;
                 return instance;

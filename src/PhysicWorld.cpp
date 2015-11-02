@@ -20,7 +20,7 @@ namespace Fury
         isSleeping = true;
         for (auto body : bodies)
         {
-            if (!body->IsSleeping())
+            if (!body->IsSleeping() && !body->IsStatic())
             {
                 isSleeping = false;
                 body->Move(body->GetVelocity());
@@ -28,9 +28,16 @@ namespace Fury
         }
         for (auto it = bodies.begin(); it != bodies.end(); it++)
         {
-            for (auto it2 = it + 1; it2 != bodies.end(); it2++)
+            if (!(*it)->IsSleeping() && !(*it)->IsStatic())
             {
-                Collision::IsColliding(*it, *it2);
+                for (auto it2 = it + 1; it2 != bodies.end(); it2++)
+                {
+                    sf::Vector2f minDisplacement;
+                    if (Collision::IsColliding(*it, *it2, minDisplacement))
+                    {
+                        //*it->Move(minDisplacement);
+                    }
+                }
             }
         }
     }
