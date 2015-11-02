@@ -12,4 +12,12 @@ namespace Fury
 	{
 		return GetTickCount() - lastShotTime;
 	}
+	void Player::Shoot()
+	{
+		if (GetDelay() > 250)
+		{
+			lastShotTime = GetTickCount();
+			//Ajouter la fonction de tir ici
+		}
+	}
 }
