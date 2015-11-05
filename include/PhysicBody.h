@@ -23,11 +23,12 @@ namespace Fury
             const sf::Vector2f& GetVelocity()const;
             const Shape* GetShape()const;
         protected:
-            sf::Vector2f position, velocity;
+            sf::Vector2f position;
             const Shape* shape;
         private:
             bool isSleeping;
             bool isStatic;
+            sf::Vector2f velocity;
     };
 }
 
