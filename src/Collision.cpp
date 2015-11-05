@@ -49,6 +49,7 @@ namespace Fury
 
         sf::Vector2f norm = Normalize(currentDist);
         sf::Vector2f expectedDist = norm * (radius1 + radius2);
+        minDisplacement = norm - expectedDist;
 
         return true;
     }
@@ -66,19 +67,20 @@ namespace Fury
         sf::Vector2f position2 = second->GetPosition();
         sf::Vector2f boxHalfSize = aabb->GetHalfSize();
 
+        if (!IsColliding(circle, position1, aabb, position2))
+            return false;
+
+        //TODO : set minDisplacement
+        /*
         sf::Vector2f nearestPoint =  position1 - position2;
         nearestPoint.x = std::min(std::max(nearestPoint.x, -boxHalfSize.x), boxHalfSize.x);
         nearestPoint.y = std::min(std::max(nearestPoint.y, -boxHalfSize.y), boxHalfSize.y);
         nearestPoint += position2;
 
-        if (!IsColliding(circle, position1, aabb, position2))
-            return false;
-
-        /*float smallestX = std::min(nearestPoint.x - (position2.x - boxHalfSize.x), (position2.x + boxHalfSize.x) - nearestPoint.x);
+        float smallestX = std::min(nearestPoint.x - (position2.x - boxHalfSize.x), (position2.x + boxHalfSize.x) - nearestPoint.x);
         float smallestY = std::min(nearestPoint.y - (position2.y - boxHalfSize.y), (position2.y + boxHalfSize.y) - nearestPoint.y);
         if (smallestX < smallestY)
         {
-            firstShape->SetVelocity(sf::Vector2f(-velocity1.x, velocity1.y));
             if (velocity1.x < 0.f)
                 firstShape->SetPosition(sf::Vector2f(nearestPoint.x + circle->GetRadius(), position1.y));
             else
@@ -86,7 +88,6 @@ namespace Fury
         }
         else
         {
-            firstShape->SetVelocity(sf::Vector2f(velocity1.x, -velocity1.y));
             if (velocity1.y < 0.f)
                 firstShape->SetPosition(sf::Vector2f(position1.x, nearestPoint.y + circle->GetRadius()));
             else
@@ -109,6 +110,15 @@ namespace Fury
 
         if(!(max1.x < min2.x || max2.y < min2.y || min1.x > max2.x || min1.y > max2.y))
             return false;
+
+        minDisplacement.y = (max1.x - min2.x < max2.x - min1.x)? max1.x - min2.x : max2.x - min1.x;
+        minDisplacement.y = (max1.y - min2.y < max2.y - min1.y)? max1.y - min2.y : max2.y - min1.y;
+
+        if (std::abs(minDisplacement.x) > std::abs(minDisplacement.y))
+            minDisplacement.x = 0.f;
+        else
+            minDisplacement.y = 0.f;
+
         return true;
     }
 
