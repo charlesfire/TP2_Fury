@@ -18,6 +18,7 @@ namespace Fury
             void Move(const sf::Vector2f& offset);
             void SetIsStatic(const bool isStatic);
             void SetPosition(const sf::Vector2f& position);
+            void SetShape(Shape& shape);
             void SetVelocity(const sf::Vector2f& velocity);
             const sf::Vector2f& GetPosition()const;
             const sf::Vector2f& GetVelocity()const;

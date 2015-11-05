@@ -41,6 +41,11 @@ namespace Fury
         this->position = position;
     }
 
+    void PhysicBody::SetShape(Shape& shape)
+    {
+        this->shape = &shape;
+    }
+
     void PhysicBody::SetVelocity(const sf::Vector2f& velocity)
     {
         if (!isStatic)
