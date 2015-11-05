@@ -35,8 +35,13 @@ namespace Fury
                     sf::Vector2f minDisplacement;
                     if (Collision::IsColliding(*it, *it2, minDisplacement))
                     {
-                        (*it)->Move(minDisplacement / 2.f);
-                        (*it2)->Move(-minDisplacement / 2.f);
+                        if ((*it2)->IsStatic())
+                            (*it)->Move(minDisplacement);
+                        else
+                        {
+                            (*it1)->Move(-minDisplacement / 2.f);
+                            (*it2)->Move(-minDisplacement / 2.f);
+                        }
                     }
                 }
             }

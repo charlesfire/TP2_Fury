@@ -32,6 +32,8 @@ namespace Fury
     void PhysicBody::SetIsStatic(const bool isStatic)
     {
         this->isStatic = isStatic;
+        if (isStatic)
+            velocity = sf::Vector2f(0, 0);
     }
 
     void PhysicBody::SetPosition(const sf::Vector2f& position)
@@ -41,8 +43,11 @@ namespace Fury
 
     void PhysicBody::SetVelocity(const sf::Vector2f& velocity)
     {
-        this->velocity = velocity;
-        isSleeping = (velocity.x == 0.f && velocity.y == 0.f);
+        if (!isStatic)
+        {
+            this->velocity = velocity;
+            isSleeping = (velocity.x == 0.f && velocity.y == 0.f);
+        }
     }
 
     const sf::Vector2f& PhysicBody::GetPosition() const
