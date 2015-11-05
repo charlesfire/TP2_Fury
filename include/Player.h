@@ -13,9 +13,10 @@ namespace Fury
 		public:
 			Player();
 			~Player();
-			void Shoot()const;
+			void Shoot();
+			int GetDelay();
 		private:
-			int shotDelay;
+			int lastShotTime;
 		    AnimatedSprite sprite;
 			Direction orientation;
 	};
