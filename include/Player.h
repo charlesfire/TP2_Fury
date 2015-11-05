@@ -5,6 +5,7 @@
 #include "AnimatedSprite.h"
 #include "Singleton.h"
 #include "Direction.h"
+#include <SFML/Graphics.hpp>
 
 namespace Fury 
 {
@@ -14,9 +15,9 @@ namespace Fury
 			Player();
 			~Player();
 			void Shoot();
-			int GetDelay();
+			sf::Time GetDelay()const;
 		private:
-			int lastShotTime;
+			sf::Clock lastShotTime;
 		    AnimatedSprite sprite;
 			Direction orientation;
 	};
