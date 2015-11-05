@@ -1,25 +1,28 @@
 #ifndef FURY_PLAYER_H
 #define FURY_PLAYER_H
 
+#include <SFML/Graphics.hpp>
 #include "Actor.h"
 #include "AnimatedSprite.h"
-#include "Singleton.h"
 #include "Direction.h"
-#include <SFML/Graphics.hpp>
+#include "Projectile.h"
+#include "RectangleShape.h"
+#include "Singleton.h"
 
 namespace Fury 
 {
 	class Player final : public Actor, public Singleton<Player>
 	{
 		public:
-			Player();
-			~Player();
+			~Player() = default;
 			void Shoot();
 			sf::Time GetDelay()const;
 		private:
+			Player();
 			sf::Clock lastShotTime;
 		    AnimatedSprite sprite;
 			Direction orientation;
+			RectangleShape hitBox;
 	};
 
 } /* End of namespace Fury */
