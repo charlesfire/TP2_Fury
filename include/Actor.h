@@ -4,10 +4,16 @@
 #include <SFML/Graphics/Drawable.hpp>
 #include "PhysicBody.h"
 
-namespace Fury 
+namespace Fury
 {
+    class World;
+
 	class Actor : public PhysicBody, public sf::Drawable
 	{
+        public:
+            Actor(World* world);
+        protected:
+            World* world;
 	};
 
 } /* End of namespace Fury */

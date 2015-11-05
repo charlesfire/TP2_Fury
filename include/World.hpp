@@ -18,7 +18,7 @@ namespace Fury
             T* AddActor(Args... args)
             {
                 static_assert(std::is_base_of<Actor, T>::value, "Only class derived from Actor could be added to a world.");
-                T* temp = new T(args...);
+                T* temp = new T(this, args...);
                 actors.push_back(temp);
                 return temp;
             }

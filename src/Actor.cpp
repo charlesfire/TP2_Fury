@@ -2,5 +2,5 @@
 
 namespace Fury
 {
-
+    Actor::Actor(World* world) : world(world) { }
 }
