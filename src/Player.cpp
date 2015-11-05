@@ -39,4 +39,9 @@ namespace Fury
 			}
 		}
 	}
+
+	void Player::SetWorld(World * world)
+	{
+		this->world = world;
+	}
 }

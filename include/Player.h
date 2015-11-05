@@ -11,11 +11,14 @@
 
 namespace Fury 
 {
+	class World;
+
 	class Player final : public Actor, public Singleton<Player>
 	{
 		public:
 			~Player() = default;
 			void Shoot();
+			void SetWorld(World* world);
 			sf::Time GetDelay()const;
 		private:
 			Player();
