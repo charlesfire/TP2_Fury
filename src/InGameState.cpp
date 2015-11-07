@@ -1,4 +1,7 @@
 #include "InGameState.h"
+#include <SFML/Graphics/RenderTarget.hpp>
+#include "World.hpp"
+#include "mld.hpp"
 
 namespace Fury
 {
@@ -24,6 +27,6 @@ namespace Fury
 
     void InGameState::draw(sf::RenderTarget& target, sf::RenderStates states)const
     {
-
+        target.draw(world);
     }
 }

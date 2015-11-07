@@ -1,9 +1,10 @@
 #include "Player.h"
 #include "constants.h"
+#include "mld.hpp"
 
 namespace Fury
 {
-	Player::Player()
+	Player::Player() : Actor(nullptr)
 	{
 		orientation = Direction::South;
 	}
@@ -12,7 +13,7 @@ namespace Fury
 	{
 		return lastShotTime.getElapsedTime();
 	}
-	
+
 	void Player::Shoot()
 	{
 		if (lastShotTime.getElapsedTime().asMilliseconds() > PLAYER_SHOT_DELAY)
@@ -36,6 +37,7 @@ namespace Fury
 				case Direction::SouthWest:
 					break;
 				case Direction::West:
+				    break;
 			}
 		}
 	}

@@ -2,17 +2,18 @@
 #define FURY_ACTOR_H
 
 #include <SFML/Graphics/Drawable.hpp>
-#include "PhysicBody.h"
 
 namespace Fury
 {
     class World;
 
-	class Actor : public PhysicBody, public sf::Drawable
+	class Actor : public sf::Drawable
 	{
         public:
-            Actor(World* world);
+            virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const {}
         protected:
+            Actor(World* world);
+
             World* world;
 	};
 

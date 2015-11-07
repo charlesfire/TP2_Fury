@@ -39,7 +39,7 @@ namespace Fury
                             (*it)->Move(minDisplacement);
                         else
                         {
-                            (*it1)->Move(-minDisplacement / 2.f);
+                            (*it)->Move(-minDisplacement / 2.f);
                             (*it2)->Move(-minDisplacement / 2.f);
                         }
                     }

@@ -3,13 +3,19 @@
 
 #include <type_traits>
 #include <vector>
-#include "mld.hpp"
+#include <SFML/Graphics/Drawable.hpp>
+#include <SFML/Graphics/RenderStates.hpp>
+
+namespace sf
+{
+    class RenderTarget;
+}
 
 namespace Fury
 {
     class Actor;
 
-    class World final
+    class World final : public sf::Drawable
     {
         public:
             World() = default;
@@ -22,6 +28,8 @@ namespace Fury
                 actors.push_back(temp);
                 return temp;
             }
+
+            void draw(sf::RenderTarget& target, sf::RenderStates states)const;
         private:
             std::vector<Actor*> actors;
     };

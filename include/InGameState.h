@@ -3,6 +3,7 @@
 
 #include "EventDispatcher.h"
 #include "State.h"
+#include "world.hpp"
 
 namespace Fury
 {
@@ -18,6 +19,7 @@ namespace Fury
             void draw(sf::RenderTarget& target, sf::RenderStates states)const;
         private:
             EventDispatcher eventDispatcher;
+            World world;
     };
 } /* End of namespace Fury */
 

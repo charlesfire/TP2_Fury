@@ -3,8 +3,7 @@
 
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/RenderStates.hpp>
-#include "mld.hpp"
-#include "Actor.h"
+#include "PhysicActor.h"
 #include "RectangleShape.h"
 
 namespace sf
@@ -14,10 +13,12 @@ namespace sf
 
 namespace Fury
 {
-    class Wall final : public Actor
+    class World;
+
+    class Wall final : public PhysicActor
     {
         public:
-            Wall(const sf::Vector2f& position = sf::Vector2f(0.f, 0.f), const sf::Vector2f& size = sf::Vector2f(0.f, 0.f));
+            Wall(World* world, const sf::Vector2f& position = sf::Vector2f(0.f, 0.f), const sf::Vector2f& size = sf::Vector2f(0.f, 0.f));
             ~Wall() = default;
             virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;
         private:

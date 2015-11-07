@@ -1,9 +1,10 @@
 #include "Wall.h"
 #include <SFML/Graphics/RenderTarget.hpp>
+#include "mld.hpp"
 
 namespace Fury
 {
-    Wall::Wall(const sf::Vector2f& position, const sf::Vector2f& size) : hitBox(size), visual(size)
+    Wall::Wall(World* world, const sf::Vector2f& position, const sf::Vector2f& size) : hitBox(size), visual(size), PhysicActor(world)
     {
         SetShape(hitBox);
     }
