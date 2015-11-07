@@ -1,6 +1,7 @@
 #include "TextureManager.hpp"
 #include <iostream>
 #include <SFML/Graphics/Texture.hpp>
+#include "mld.hpp"
 
 namespace Fury
 {

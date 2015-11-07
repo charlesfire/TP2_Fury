@@ -3,22 +3,23 @@
 
 #include <array>
 #include <vector>
-#include <SFML/Graphics/Drawable.hpp>
 #include <SFML/Graphics/RenderStates.hpp>
-#include "Wall.h"
+#include "Actor.h"
 
 namespace Fury
 {
-    class Room final : public sf::Drawable
+    class Wall;
+
+    class Room final : public Actor
     {
         public:
-            Room();
+            Room(World* world);
             ~Room() = default;
             virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;
             void Generate();
         private:
-            std::vector<Wall> pillars;
-            std::vector<Wall> walls;
+            std::vector<Wall*> pillars;
+            std::vector<Wall*> walls;
     };
 } /* End of namespace Fury */
 
