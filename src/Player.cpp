@@ -2,13 +2,13 @@
 #include "constants.h"
 #include "World.hpp"
 #include "mld.hpp"
-#include <SFML/Window/Keyboard.hpp>
 
 namespace Fury
 {
 	Player::Player() : PhysicActor(nullptr)
 	{
 		orientation = Direction::South;
+		SetPosition(sf::Vector2f((float)WINDOW_WIDTH / 6, (float)WINDOW_HEIGHT / 2));
 	}
 
 	sf::Time Player::GetDelay()const
@@ -35,7 +35,7 @@ namespace Fury
 		sprite.setPosition(GetPosition());
 	}
 
-	void Player::Draw(sf::RenderTarget& target, sf::RenderStates state)
+	void Player::draw(sf::RenderTarget& target, sf::RenderStates& state)
 	{
 		target.draw(sprite);
 	}

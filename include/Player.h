@@ -21,7 +21,7 @@ namespace Fury
 			void SetWorld(World* world);
 			sf::Time GetDelay()const;
 			void Update();
-			void Draw(sf::RenderTarget& target, sf::RenderStates state);
+			void draw(sf::RenderTarget& target, sf::RenderStates& state);
 		private:
 			Player();
 			sf::Clock lastShotTime;

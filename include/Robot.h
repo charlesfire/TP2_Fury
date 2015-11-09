@@ -1,20 +1,27 @@
 #ifndef FURY_ROBOT_H
 #define FURY_ROBOT_H
 
-#include "Actor.h"
-#include "AnimatedSprite.h"
+#include <SFML/Graphics.hpp>
+#include "constants.h"
+#include "PhysicActor.h"
 
 
-namespace Fury {
-
-class Robot : public Actor
+namespace Fury 
 {
 
-
- private:
-    AnimatedSprite sprite;
-
-};
+	class Robot : public PhysicActor
+	{
+		public: 
+			sf::Time GetDelay()const;
+			void draw(sf::RenderTarget& target, sf::RenderStates& state);
+			void Update();
+			Robot(World * world, sf::Vector2f spawnPosition);
+			~Robot();
+		protected:
+			sf::Sprite sprite;
+			sf::Clock lastShotTime;
+			static float speed;
+	};
 
 } /* End of namespace Fury */
 
