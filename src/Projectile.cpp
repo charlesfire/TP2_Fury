@@ -5,9 +5,9 @@
 
 namespace Fury
 {
-	Projectile::Projectile(World * world, const sf::Vector2f& speed) : hitCircle(5), sprite()
+	Projectile::Projectile(World * world, const float speed, const Direction _orientation) : hitCircle(5), sprite(), PhysicActor(world)
 	{
-		SetVelocity(speed);
+		SetVelocity(sf::Vector2f((float)cos(M_PI_4*orientation*speed), (float)sin(M_PI_4*orientation*speed)));
 		sprite.setTexture(TextureManager::GetInstance().GetTexture("Sprites/Balle.png"));
 	}
 	void Projectile::Update()

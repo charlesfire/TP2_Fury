@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "constants.h"
+#include "World.hpp"
 #include "mld.hpp"
 
 namespace Fury
@@ -19,26 +20,7 @@ namespace Fury
 		if (lastShotTime.getElapsedTime().asMilliseconds() > PLAYER_SHOT_DELAY)
 		{
 			lastShotTime.restart();
-			switch (orientation)
-			{
-				//TODO: Tir selon la direction du joueur
-				case Direction::East:
-					break;
-				case Direction::North:
-					break;
-				case Direction::NorthEast:
-					break;
-				case Direction::NorthWest:
-					break;
-				case Direction::South:
-					break;
-				case Direction::SouthEast:
-					break;
-				case Direction::SouthWest:
-					break;
-				case Direction::West:
-				    break;
-			}
+			world->AddActor<Projectile>(PLAYER_BULLET_SPEED, orientation);
 		}
 	}
 
