@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics/RectangleShape.hpp>
 #include <SFML/Graphics/RenderStates.hpp>
+#include <SFML/System/Vector2.hpp>
 #include "PhysicActor.h"
 #include "RectangleShape.h"
 
@@ -20,7 +21,8 @@ namespace Fury
         public:
             Wall(World* world, const sf::Vector2f& position = sf::Vector2f(0.f, 0.f), const sf::Vector2f& size = sf::Vector2f(0.f, 0.f));
             ~Wall() = default;
-            virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;
+            void draw(sf::RenderTarget& target, sf::RenderStates states)const;
+            void SetSize(const sf::Vector2f& size);
         private:
             RectangleShape hitBox;
             sf::RectangleShape visual;

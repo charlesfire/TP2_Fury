@@ -18,7 +18,6 @@ namespace Fury
             virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;
             void Generate();
         private:
-            std::vector<Wall*> pillars;
             std::vector<Wall*> walls;
     };
 } /* End of namespace Fury */
