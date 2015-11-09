@@ -20,7 +20,7 @@ namespace Fury
     template<class T>
     class EventListener<T> : public virtual EventListener<>
     {
-        static_assert(std::is_base_of<Event, T>(), "An EventListener can only listen to events.");
+        static_assert(std::is_base_of<Event, T>::value, "An EventListener can only listen to events.");
         public:
             EventListener() : priority(0) {}
             EventListener(int priority) : priority(priority) {}
@@ -36,7 +36,7 @@ namespace Fury
     template<class T, class U, class ...Types>
     class EventListener<T, U, Types...> : public EventListener<T>, public EventListener<U, Types...>
     {
-        static_assert(std::is_base_of<Event, T>(), "An EventListener can only listen to events.");
+        static_assert(std::is_base_of<Event, T>::value, "An EventListener can only listen to events.");
         public:
             EventListener();
 

@@ -1,4 +1,5 @@
 #include "Collision.h"
+#include <algorithm>
 #include <cassert>
 #include <cmath>
 #include <functional>
