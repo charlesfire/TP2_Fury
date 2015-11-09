@@ -7,6 +7,7 @@ namespace Fury
  	const unsigned int WINDOW_WIDTH = 1280;
 	const unsigned int PLAYER_BULLET_SPEED = 10;
 	const unsigned int PLAYER_SHOT_DELAY = 250;
+	const float PLAYER_WALK_SPEED = 3.1415;
 	const float WALL_LENGTH = 220.f;
 	const float WALL_THICKNESS = 15.f;
 }

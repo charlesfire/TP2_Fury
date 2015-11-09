@@ -2,10 +2,11 @@
 #include "constants.h"
 #include "World.hpp"
 #include "mld.hpp"
+#include <SFML/Window/Keyboard.hpp>
 
 namespace Fury
 {
-	Player::Player() : Actor(nullptr)
+	Player::Player() : PhysicActor(nullptr)
 	{
 		orientation = Direction::South;
 	}
@@ -27,5 +28,15 @@ namespace Fury
 	void Player::SetWorld(World * world)
 	{
 		this->world = world;
+	}
+
+	void Player::Update()
+	{
+		sprite.setPosition(GetPosition());
+	}
+
+	void Player::Draw(sf::RenderTarget& target, sf::RenderStates state)
+	{
+		target.draw(sprite);
 	}
 }

@@ -2,9 +2,9 @@
 #define FURY_PLAYER_H
 
 #include <SFML/Graphics.hpp>
-#include "Actor.h"
 #include "AnimatedSprite.h"
 #include "Direction.h"
+#include "PhysicActor.h"
 #include "Projectile.h"
 #include "RectangleShape.h"
 #include "Singleton.h"
@@ -13,17 +13,19 @@ namespace Fury
 {
 	class World;
 
-	class Player final : public Actor, public Singleton<Player>
+	class Player final : public PhysicActor, public Singleton<Player>
 	{
 		public:
 			~Player() = default;
 			void Shoot();
 			void SetWorld(World* world);
 			sf::Time GetDelay()const;
+			void Update();
+			void Draw(sf::RenderTarget& target, sf::RenderStates state);
 		private:
 			Player();
 			sf::Clock lastShotTime;
-		    AnimatedSprite sprite;
+		    sf::Sprite sprite;
 			Direction orientation;
 			RectangleShape hitBox;
 	};
