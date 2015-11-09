@@ -15,7 +15,6 @@ namespace Fury
         public:
             Room(World* world);
             ~Room() = default;
-            virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;
             void Generate();
         private:
             std::vector<Wall*> walls;
