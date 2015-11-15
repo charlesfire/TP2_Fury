@@ -35,7 +35,7 @@ namespace Fury
 		sprite.setPosition(GetPosition());
 	}
 
-	void Player::draw(sf::RenderTarget& target, sf::RenderStates& state)
+	void Player::draw(sf::RenderTarget& target, sf::RenderStates state)const
 	{
 		target.draw(sprite);
 	}

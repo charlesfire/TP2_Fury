@@ -18,9 +18,11 @@ namespace Fury
 	{
 		public:
 			~Player() = default;
+			void draw(sf::RenderTarget& target, sf::RenderStates state)const;
+			sf::Time GetDelay()const;
 			void Shoot();
 			void SetWorld(World* world);
-			sf::Time GetDelay()const;
+			void Update();
 		private:
 			Player();
 			sf::Clock lastShotTime;
