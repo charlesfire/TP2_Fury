@@ -13,6 +13,8 @@ namespace Fury
 	const float WALL_LENGTH = 220.f;
 	const unsigned int NB_HORIZONTAL_WALL = 5;
 	const unsigned int NB_VERTICAL_WALL = 3;
+	const float M_PI = 3.14159265358979323846f;
+	const float M_PI_4 = 0.785398163397448309616f;
 }
 
 #endif // FURY_CONSTANTS_H_INCLUDED
