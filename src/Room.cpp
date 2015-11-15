@@ -13,6 +13,13 @@ namespace Fury
         Generate();
     }
 
+    Room::~Room()
+    {
+        for (auto wall : walls)
+            world->RemoveActor(wall);
+        walls.clear();
+    }
+
     void Room::Generate()
     {
         std::default_random_engine generator;

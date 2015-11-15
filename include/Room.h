@@ -14,9 +14,9 @@ namespace Fury
     {
         public:
             Room(World* world);
-            ~Room() = default;
-            void Generate();
+            ~Room();
         private:
+            void Generate();
             std::vector<Wall*> walls;
     };
 } /* End of namespace Fury */
