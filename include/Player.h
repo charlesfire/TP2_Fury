@@ -1,27 +1,26 @@
 #ifndef FURY_PLAYER_H
 #define FURY_PLAYER_H
 
-#include <SFML/Graphics.hpp>
-#include "AnimatedSprite.h"
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/System/Clock.hpp>
+#include <SFML/System/Time.hpp>
+#include "Actor.h"
 #include "Direction.h"
-#include "PhysicActor.h"
 #include "Projectile.h"
 #include "RectangleShape.h"
 #include "Singleton.h"
 
-namespace Fury 
+namespace Fury
 {
 	class World;
 
-	class Player final : public PhysicActor, public Singleton<Player>
+	class Player final : public Actor, public Singleton<Player>
 	{
 		public:
 			~Player() = default;
 			void Shoot();
 			void SetWorld(World* world);
 			sf::Time GetDelay()const;
-			void Update();
-			void draw(sf::RenderTarget& target, sf::RenderStates& state);
 		private:
 			Player();
 			sf::Clock lastShotTime;
