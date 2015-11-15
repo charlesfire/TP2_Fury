@@ -4,9 +4,9 @@
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/System/Clock.hpp>
 #include <SFML/System/Time.hpp>
-#include "Actor.h"
 #include "Direction.h"
 #include "Projectile.h"
+#include "PhysicActor.h"
 #include "RectangleShape.h"
 #include "Singleton.h"
 
@@ -14,7 +14,7 @@ namespace Fury
 {
 	class World;
 
-	class Player final : public Actor, public Singleton<Player>
+	class Player final : public PhysicActor, public Singleton<Player>
 	{
 		public:
 			~Player() = default;
