@@ -10,4 +10,15 @@ namespace Fury
         for (auto actor : actors)
             target.draw(*actor, states);
     }
+
+    bool World::RemoveActor(Actor* actor)
+    {
+        if (actors.find(actor) != actors.end())
+        {
+            actors.erase(actor);
+            delete actor;
+        }
+
+        return false;
+    }
 }
