@@ -18,6 +18,11 @@ namespace Fury
 		sprite.setPosition(GetPosition());
 	}
 
+	void Robot::SetSpeed(const int nbRobots)
+	{
+		speed = ROBOT_MAX_SPEED / (float)nbRobots;
+	}
+
 	Robot::~Robot()
 	{
 

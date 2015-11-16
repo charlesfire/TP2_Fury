@@ -17,6 +17,7 @@ namespace Fury
             ~Room();
         private:
             void Generate();
+			void Populate();
             std::vector<Wall*> walls;
     };
 } /* End of namespace Fury */

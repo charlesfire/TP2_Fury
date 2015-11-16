@@ -1,7 +1,9 @@
 #include "Room.h"
 #include <chrono>
+#include <Random>
 #include <SFML/Graphics/RenderTarget.hpp>
 #include "Constants.h"
+#include "Robot.h"
 #include "Wall.h"
 #include "World.hpp"
 #include "mld.hpp"
@@ -61,4 +63,14 @@ namespace Fury
             }
         }
     }
+	void Room::Populate()
+	{
+		std::default_random_engine generator;
+		std::uniform_int_distribution<int> distribution(1, 6);
+		for (unsigned int i(0); i < distribution(generator) + distribution(generator); i++)
+		{
+			//TODO: Il faudra faire générer des robots au hasard, robot doit être abstrait selon l'énoncé.
+			//world->AddActor<Robot>(sf::Vector2f(50, 50));
+		}
+	}
 }
