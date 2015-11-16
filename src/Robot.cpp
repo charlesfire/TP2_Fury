@@ -3,6 +3,8 @@
 
 namespace Fury
 {
+	static float speed;
+
 	Robot::Robot(World * world, sf::Vector2f spawnPosition) : PhysicActor(world)
 	{
 		SetPosition(spawnPosition);

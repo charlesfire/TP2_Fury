@@ -22,7 +22,6 @@ namespace Fury
 		protected:
 			sf::Sprite sprite;
 			sf::Clock lastShotTime;
-			static float speed;
 	};
 
 } /* End of namespace Fury */

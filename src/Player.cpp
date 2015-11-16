@@ -39,4 +39,14 @@ namespace Fury
 	{
 		target.draw(sprite);
 	}
+
+	int Player::GetLife() const
+	{
+		return nbLives;
+	}
+
+	void Player::DropLife()
+	{
+		nbLives--;
+	}
 }

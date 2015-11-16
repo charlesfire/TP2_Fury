@@ -16,19 +16,22 @@ namespace Fury
 
 	class Player final : public PhysicActor, public Singleton<Player>
 	{
-		public:
-			~Player() = default;
-			void draw(sf::RenderTarget& target, sf::RenderStates state)const;
-			sf::Time GetDelay()const;
-			void Shoot();
-			void SetWorld(World* world);
-			void Update();
-		private:
-			Player();
-			sf::Clock lastShotTime;
-		    sf::Sprite sprite;
-			Direction orientation;
-			RectangleShape hitBox;
+	public:
+		~Player() = default;
+		void draw(sf::RenderTarget& target, sf::RenderStates state)const;
+		sf::Time GetDelay()const;
+		void Shoot();
+		void SetWorld(World* world);
+		void Update();
+		int GetLife()const;
+		void DropLife();
+	private:
+		Player();
+		sf::Clock lastShotTime;
+		sf::Sprite sprite;
+		Direction orientation;
+		RectangleShape hitBox;
+		int nbLives;
 	};
 
 } /* End of namespace Fury */
