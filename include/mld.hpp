@@ -24,12 +24,12 @@
         return LeakDetector::getInstance().allocate(size, true, file, func, line);
     }
 
-    inline void operator delete(void* ptr)
+    inline void operator delete(void* ptr)noexcept
     {
         LeakDetector::getInstance().free(ptr, false);
     }
 
-    inline void operator delete[](void* ptr)
+    inline void operator delete[](void* ptr)noexcept
     {
         LeakDetector::getInstance().free(ptr, true);
     }

@@ -1,5 +1,6 @@
 #include "InGameState.h"
 #include <SFML/Graphics/RenderTarget.hpp>
+#include "Maze.h"
 #include "World.hpp"
 #include "mld.hpp"
 
@@ -12,6 +13,7 @@ namespace Fury
 
     bool InGameState::Init()
     {
+        world.AddActor<Room>();
         return true;
     }
 
