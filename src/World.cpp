@@ -1,4 +1,5 @@
 #include "World.hpp"
+#include <algorithm>
 #include <SFML/Graphics/RenderTarget.hpp>
 #include "Actor.h"
 #include "mld.hpp"
@@ -18,7 +19,11 @@ namespace Fury
             actors.erase(actor);
             delete actor;
         }
-
         return false;
     }
+	void World::Update()
+	{
+		for (auto actor : actors)
+			actor->Update();
+	}
 }

@@ -1,6 +1,7 @@
 #include "InGameState.h"
 #include <SFML/Graphics/RenderTarget.hpp>
 #include "Maze.h"
+#include "Player.h"
 #include "World.hpp"
 #include "mld.hpp"
 
@@ -24,7 +25,7 @@ namespace Fury
 
     void InGameState::Update()
     {
-
+		world.Update();
     }
 
     void InGameState::draw(sf::RenderTarget& target, sf::RenderStates states)const

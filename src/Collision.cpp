@@ -1,5 +1,6 @@
 #include "Collision.h"
 #include <cassert>
+#include <algorithm>
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <functional>
