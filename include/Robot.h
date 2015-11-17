@@ -14,7 +14,7 @@ namespace Fury
 		public: 
 			sf::Time GetDelay()const;
 			void draw(sf::RenderTarget& target, sf::RenderStates& state);
-			void Update();
+			virtual void Update();
 			Robot(World * world, sf::Vector2f spawnPosition);
 			void SetSpeed(const int nbRobots);
 			virtual void Shoot() = 0;

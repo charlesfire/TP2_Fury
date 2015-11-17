@@ -10,6 +10,7 @@ namespace Fury
 
     class PhysicActor : public Actor, public PhysicBody
     {
+		public:
         protected:
             PhysicActor(World* world);
     };

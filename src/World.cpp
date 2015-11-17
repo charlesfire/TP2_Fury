@@ -23,7 +23,7 @@ namespace Fury
     }
 	void World::Update()
 	{
-		for (auto actor : actors)
-			actor->Update();
+		//for (auto actor : actors)
+		//	actor->Update();
 	}
 }
