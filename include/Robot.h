@@ -17,6 +17,8 @@ namespace Fury
 			virtual void Update();
 			Robot(World * world, sf::Vector2f spawnPosition);
 			void SetSpeed(const int nbRobots);
+			void ResetTimer();
+			int GetDelay();
 			virtual void Shoot() = 0;
 			~Robot();
 		protected:
