@@ -23,6 +23,7 @@ namespace Fury
             ~Wall() = default;
             void draw(sf::RenderTarget& target, sf::RenderStates states)const;
             void SetSize(const sf::Vector2f& size);
+			void Update();
         private:
             RectangleShape hitBox;
             sf::RectangleShape visual;

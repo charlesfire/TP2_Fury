@@ -10,6 +10,6 @@ namespace Fury
 
 	void Gunner::Shoot(sf::Vector2f spawnPosition)
 	{
-		
+		//world->AddActor<Projectile>(PLAYER_BULLET_SPEED, atanf(spawnPosition.y / spawnPosition.x) * 4, false, spawnPosition);
 	}
 }

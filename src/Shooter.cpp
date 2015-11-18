@@ -8,6 +8,7 @@ namespace Fury
 	Shooter::Shooter(World * world, sf::Vector2f spawnPosition) : Robot(world, spawnPosition)
 	{
 		sprite.setColor(sf::Color::Cyan);
+		
 	}
 	void Shooter::Shoot(sf::Vector2f spawnPosition)
 	{

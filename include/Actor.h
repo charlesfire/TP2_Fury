@@ -11,7 +11,7 @@ namespace Fury
 	{
         public:
             virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const {}
-			void Update();
+			virtual void Update()=0;
         protected:
             Actor(World* world);
 

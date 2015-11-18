@@ -21,4 +21,8 @@ namespace Fury
         visual.setSize(size);
         hitBox.SetSize(size);
     }
+	void Wall::Update()
+	{
+
+	}
 } /* End of namespace Fury */

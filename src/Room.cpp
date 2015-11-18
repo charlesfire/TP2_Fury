@@ -73,4 +73,9 @@ namespace Fury
 			//world->AddActor<Robot>(sf::Vector2f(50, 50));
 		}
 	}
+
+	void Room::Update()
+	{
+
+	}
 }
