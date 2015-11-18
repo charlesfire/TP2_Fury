@@ -4,10 +4,13 @@
 #include "Brawler.h"
 
 
-namespace Fury {
+namespace Fury 
+{
 
-class Juggernaut : public Brawler
-{};
+	class Ghost : public Brawler
+	{
+		Ghost(World * world, sf::Vector2f spawnPosition);
+	};
 
 } /* End of namespace Fury */
 

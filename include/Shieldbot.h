@@ -4,10 +4,18 @@
 #include "Brawler.h"
 
 
-namespace Fury {
+namespace Fury 
+{
 
-class Shieldbot : public Brawler
-{};
+	class Shieldbot : public Brawler
+	{
+		public:
+			Shieldbot(World * world, sf::Vector2f spawnPosition);
+			float GetShieldStrength()const;
+			void PowerDown();
+		private:
+			float shieldPower;
+	};
 
 } /* End of namespace Fury */
 

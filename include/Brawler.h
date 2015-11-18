@@ -2,12 +2,18 @@
 #define FURY_BRAWLER_H
 
 #include "Robot.h"
+#include "PhysicActor.h"
 
+namespace Fury 
+{
 
-namespace Fury {
-
-class Brawler : public Robot
-{};
+	class Brawler : public Robot
+	{
+	public:
+		Brawler(World * world, sf::Vector2f spawnPosition);
+		~Brawler();
+		void Move();
+	};
 
 } /* End of namespace Fury */
 

@@ -4,11 +4,14 @@
 #include "Robot.h"
 
 
-namespace Fury {
+namespace Fury 
+	{
+		class Shooter : public Robot
+		{
+			public:
+				Shooter(World * world, sf::Vector2f spawnPosition);
+		};
 
-class Shooter : public Robot
-{};
-
-} /* End of namespace Fury */
+	} /* End of namespace Fury */
 
 #endif // FURY_SHOOTER_H
