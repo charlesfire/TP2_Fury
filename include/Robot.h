@@ -19,7 +19,7 @@ namespace Fury
 			void SetSpeed(const int nbRobots);
 			void ResetTimer();
 			int GetDelay();
-			virtual void Shoot() = 0;
+			virtual void Shoot(sf::Vector2f orientation) = 0;
 			~Robot();
 		protected:
 			sf::Sprite sprite;

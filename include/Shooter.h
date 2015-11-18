@@ -10,6 +10,7 @@ namespace Fury
 		{
 			public:
 				Shooter(World * world, sf::Vector2f spawnPosition);
+				virtual void Shoot(sf::Vector2f spawnPosition);
 		};
 
 	} /* End of namespace Fury */

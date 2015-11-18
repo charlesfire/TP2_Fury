@@ -6,10 +6,11 @@
 
 namespace Fury 
 {
-	class Gunner : public Shooter
+	class Gunner final : public Shooter
 	{
 		public:
-			//(World * world, sf::Vector2f spawnPosition);
+			Gunner(World * world, sf::Vector2f spawnPosition);
+			void Shoot(sf::Vector2f spawnPosition);
 	};
 
 } /* End of namespace Fury */

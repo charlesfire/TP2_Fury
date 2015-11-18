@@ -21,7 +21,7 @@ namespace Fury
 		if (lastShotTime.getElapsedTime().asMilliseconds() > PLAYER_SHOT_DELAY)
 		{
 			lastShotTime.restart();
-			world->AddActor<Projectile>(PLAYER_BULLET_SPEED, orientation);
+			world->AddActor<Projectile>(PLAYER_BULLET_SPEED, orientation,false, GetPosition());
 		}
 	}
 

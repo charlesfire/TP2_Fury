@@ -6,8 +6,7 @@
 
 namespace Fury 
 {
-
-	class Ghost : public Brawler
+	class Ghost final : public Brawler
 	{
 		Ghost(World * world, sf::Vector2f spawnPosition);
 	};

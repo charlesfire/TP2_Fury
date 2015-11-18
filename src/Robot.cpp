@@ -9,7 +9,6 @@ namespace Fury
 {
 	static float speed;
 	static sf::Clock spawnDelay;
-	static sf::Texture robTexture;
 
 	Robot::Robot(World * world, sf::Vector2f spawnPosition) : PhysicActor(world)
 	{

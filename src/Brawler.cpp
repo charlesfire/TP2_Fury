@@ -13,4 +13,9 @@ namespace Fury
 	{
 
 	}
+
+	void Brawler::Shoot(sf::Vector2f spawnPosition)
+	{
+
+	}
 }

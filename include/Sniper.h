@@ -9,7 +9,8 @@ namespace Fury
 	class Sniper : public Shooter
 	{
 		public:
-			//Sniper(World * world, sf::Vector2f spawnPosition);
+			Sniper(World * world, sf::Vector2f spawnPosition);
+			void Shoot(sf::Vector2f spawnPosition);
 	};
 
 } /* End of namespace Fury */

@@ -7,9 +7,10 @@
 
 namespace Fury
 {
-	Projectile::Projectile(World * world, const float speed, const Direction _orientation) : hitCircle(5), sprite(), PhysicActor(world)
+	Projectile::Projectile(World * world, const float speed, const float _orientation, const bool isFromSniper, const sf::Vector2f position) : PhysicActor(world), hitCircle(5), sprite()
 	{
-		SetVelocity(sf::Vector2f((float)std::cos(M_PI_4 * orientation * speed), (float)std::sin(M_PI_4 * orientation * speed)));
+		SetPosition(position);
+		SetVelocity(sf::Vector2f((float)std::cos(M_PI * (_orientation/4) * speed), (float)std::sin(M_PI_4 * orientation * speed)));
 		sprite.setTexture(TextureManager::GetInstance().GetTexture("Sprites/Balle.png"));
 	}
 	void Projectile::Update()
