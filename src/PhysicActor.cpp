@@ -7,4 +7,8 @@ namespace Fury
     {
         //ctor
     }
+	void PhysicActor::Update()
+	{
+		
+	}
 }

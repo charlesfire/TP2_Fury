@@ -11,6 +11,7 @@ namespace Fury
     class PhysicActor : public Actor, public PhysicBody
     {
 		public:
+			virtual void Update();
         protected:
             PhysicActor(World* world);
     };

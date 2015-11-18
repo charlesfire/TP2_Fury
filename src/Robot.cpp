@@ -16,7 +16,7 @@ namespace Fury
 		sprite.setTexture(TextureManager::GetInstance().GetTexture("Sprites/RobotImmobile.png"));
 	}
 
-	void Robot::draw(sf::RenderTarget& target, sf::RenderStates& state)
+	void Robot::draw(sf::RenderTarget& target, sf::RenderStates& state)const
 	{
 		target.draw(sprite);
 	}

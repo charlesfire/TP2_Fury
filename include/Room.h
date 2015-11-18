@@ -18,7 +18,7 @@ namespace Fury
         private:
             void Generate();
 			void Populate();
-			void Update();
+			virtual void Update();
             std::vector<Wall*> walls;
     };
 } /* End of namespace Fury */
