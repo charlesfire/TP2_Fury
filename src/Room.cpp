@@ -3,7 +3,7 @@
 #include <Random>
 #include <SFML/Graphics/RenderTarget.hpp>
 #include "Constants.h"
-#include "Robot.h"
+#include "Brawler.h"
 #include "Wall.h"
 #include "World.hpp"
 #include "mld.hpp"
@@ -13,6 +13,7 @@ namespace Fury
     Room::Room(World* world) : walls(), Actor(world)
     {
         Generate();
+		Populate();
     }
 
     Room::~Room()
@@ -70,7 +71,7 @@ namespace Fury
 		for (unsigned int i(0); i < distribution(generator) + distribution(generator); i++)
 		{
 			//TODO: Il faudra faire générer des robots au hasard, robot doit être abstrait selon l'énoncé.
-			//world->AddActor<Robot>(sf::Vector2f(50, 50));
+			world->AddActor<Brawler>(sf::Vector2f(50, 50));
 		}
 	}
 

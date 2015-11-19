@@ -32,7 +32,7 @@ namespace Fury
 
             bool RemoveActor(Actor* actor);
 			void Update();
-            void draw(sf::RenderTarget& target, sf::RenderStates states)const;
+            virtual void draw(sf::RenderTarget& target, sf::RenderStates states)const;
         private:
             std::set<Actor*> actors;
     };

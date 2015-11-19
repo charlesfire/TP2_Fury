@@ -12,6 +12,7 @@ namespace Fury
     {
 		public:
 			virtual void Update();
+			virtual void draw(sf::RenderTarget& target, sf::RenderStates& state)const;
         protected:
             PhysicActor(World* world);
     };

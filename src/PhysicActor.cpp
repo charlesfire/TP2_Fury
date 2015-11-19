@@ -11,4 +11,9 @@ namespace Fury
 	{
 		
 	}
+
+	void PhysicActor::draw(sf::RenderTarget& target, sf::RenderStates& state)const
+	{
+
+	}
 }
